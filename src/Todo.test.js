@@ -1,0 +1,11 @@
+import { render, screen } from '@testing-library/react';
+import Todo from './Todo';
+
+it('renders without crashing', () => {
+  render(<Todo />);
+});
+
+it('matches snapshot', () => {
+  const {asFragment} = render(<Todo todo="get groceries" />)
+  expect(asFragment()).toMatchSnapshot()
+});
